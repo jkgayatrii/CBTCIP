@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+        <title>Customer login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <div style="display: flex;align-items: center;justify-content: space-evenly;background-color: black;height: 70px;">
+        <div style="text-align: center;color: white; font-size: 40px;">Our Event Management Portal!</div>
+        <div style="display: flex;align-items: center;justify-content: space-evenly;">
+			<a href="#" style="font-size: 30px;margin-right:25px;">Home</a>
+            <a href="#" style="font-size: 30px;margin-right:25px;">Contact Us</a>
+            <a href="#" style="font-size: 30px;">Login</a>
+        </div></div>
+        <link rel="stylesheet" href="total.css">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+     
+</script>
+<div>
+    <ul>
+        <li><a href="#" onclick="showForm('addEventForm')">Book an Event</a></li>
+        <li><a href="#" onclick="showForm('viewEventsForm')">View Events</a></li>
+        
+        <li><a href="#" onclick="showForm('viewEventsForm')">View Venues</a></li>
+        <li><a href="#" onclick="showForm('viewEventsForm')">Booking status</a></li>
+
+        <li><a href="#" onclick="showForm('mydetailsform')">My details</a></li>
+    </ul>
+</div>
+<div id="forms">
+    <!-- Add Event Form -->
+    <div id="addEventForm" class="form-container" style="display: none;">
+        <h2>Add Event Form</h2>
+        <!-- Your form fields here -->
+        <!-- Example: -->
+        Event Name: <input type="text" name="eventName"><br>
+        Date: <input type="date" name="eventDate"><br>
+        <button onclick="submitForm('addEventForm')">Submit</button>
+    </div>
+
+    <!-- View Events Form -->
+    <div id="viewEventsForm" class="form-container" style="display: none;">
+        <h2>View Events Form</h2>
+        <!-- Your view events content here -->
+    </div>
+
+    <!-- User Lists Form -->
+    <div id="mydetailsform" class="form-container" style="display: none;">
+        <h2>My Details</h2>
+        <a href="mydetails">Show</a>
+        <!-- Your user lists content here -->
+    </div>
+</div>
+
+<script>
+function showForm(formId) {
+    // Hide all forms
+    var forms = document.getElementsByClassName("form-container");
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+    }
+
+    // Show the selected form
+    var form = document.getElementById(formId);
+    form.style.display = "block";
+}
+
+function submitForm(formId) {
+    // Perform form submission logic here
+    // For demonstration, let's just log the form ID
+    console.log("Form submitted: " + formId);
+}
+</script>
+
+
+</body>
+</html>

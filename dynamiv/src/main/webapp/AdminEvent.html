@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!-- ADMINISTRATION EVENT PAGE -->
+<html>
+    <head>
+        <title>Admin Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <div style="display: flex;align-items: center;justify-content: space-evenly;background-color: black;height: 70px;">
+        <div style="text-align: center;color: white; font-size: 40px;">Our Event Management Portal!</div>
+        <div style="display: flex;align-items: center;justify-content: space-evenly;">
+			<a href="#" style="font-size: 30px;margin-right:25px;">Home</a>
+            <a href="#" style="font-size: 30px;margin-right:25px;">Contact us</a>
+            <a href="#" style="font-size: 30px;">Login</a>
+        </div></div>
+        <link rel="stylesheet" href="total.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div style="display: flex;align-items: center;justify-content: space-evenly;background-color:slategrey; height: 30px;margin-top: 5px;">
+        <a href="#" onclick="showForm('addEventForm')">Add Event</a>
+        <a href="#" onclick="showForm('viewEventsForm')">View Events</a>
+        <a href="#" onclick="showForm('addvenueForm')">Add Venue</a>
+        <a href="#" onclick="showForm('viewvenueForm')">View Venues</a>
+        <a href="#" onclick="showForm('userListsForm')">User Lists</a>
+        <a href="#" onclick="showForm('addvendorForm')">Add Vendors</a>
+        <a href="index.html">Logout</a>
+        </div>
+<div id="forms">
+    <!-- Add Event Form -->
+    <div id="addEventForm" class="form-container" style="display: none;color: black;">
+        <center><h2>Add Event Form</h2>
+        <!-- Your form fields here -->
+        <!-- Example: -->
+        <form action="addeventServlet" method="post">
+			<label for="eventName"> Event Name: </label><br>
+       <input type="text" name="eventName" id="eventName" required><br><br>
+      <lable for="evtdiscription">Discription:</lable><br>
+      <textarea rows="5" cols="44" name="evtdiscription" id="evtdiscription" style="margin-top: 9px;" required></textarea>
+
+        <br><br><br>
+        <input type="submit" value="submit" class="btn">
+
+      
+        </form></center>
+    </div>
+
+    <!-- View Events Form -->
+    <div id="viewEventsForm" class="form-container" style="display: none;color: black;">
+        <h2>View Events Form</h2>
+        <form action="vieweventServlet" method="get">
+			<button>Show List</button>
+		</form>
+        
+    </div>
+    
+ 
+    <!-- add venue Form -->
+    <div id="addvenueForm" class="form-container" style="display: none;color: black;">
+        <center><h2>Add Venue</h2>
+        <!-- Your user lists content here -->
+        <form action="addvenueServlet" method="post">
+			<label for="venuename">Venue Name</label><br>
+			<input type="text" name="venuename" id="venuename" required><br><br>
+			<label for="venuecost">Cost</label><br>
+			<input type="text" id="venuecost" name="venuecost"  required><br><br>
+			<label for="loc">Location</label><br>
+		    <input type="text" id="loc" name="loc"  required><br><br>
+
+			<label for="capacity">Capacity</label><br>
+		   <input type="text" id="capacity" name="capacity"  required><br><br>
+
+			<label for="contact">Contact</label>	<br>
+			<input type="text" id="contact" name="contact"  required><br><br><br>
+
+		<button>Add Venue</button>
+		</form></center>
+    </div>
+    
+    <div id="viewvenueForm" class="form-container" style="display: none;color: black;">
+        <h2>Venues List</h2>
+
+        <form action="viewvenueServlet" method="get">
+			<button>Show List</button>
+		</form>    </div>
+    
+    <div id="userListsForm" class="form-container" style="display: none;color: black;">
+        <h2>User Lists Form</h2>
+         <form action="userlistServlet" method="get">
+			<button>Show List</button>
+		</form>  
+        <!-- Your user lists content here -->
+    </div>
+    
+    <div id="addvendorForm" class="form-container" style="display: none;color: black;">
+        <h2>User Lists Form</h2>
+        <!-- Your user lists content here -->
+   
+    
+</div>
+
+
+
+<script>
+function showForm(formId) {
+    // Hide all forms
+    var forms = document.getElementsByClassName("form-container");
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+    }
+
+    // Show the selected form
+    var form = document.getElementById(formId);
+    form.style.display = "block";
+}
+
+
+function submitForm(formId) {
+    // Perform form submission logic here
+    // For demonstration, let's just log the form ID
+    console.log("Form submitted: " + formId);
+}
+
+</script>      
+    </body>
+</html>
